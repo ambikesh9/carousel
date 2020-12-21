@@ -1,0 +1,176 @@
+$slide-count: 5;
+$slide-width: 30rem;
+
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+}
+
+body {
+  font-size: 1.5rem;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: inherit;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.item-body {
+  margin-top: 10%;
+  align-items: center;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  position: relative;
+  width: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.item-body-data {
+  height: 40rem;
+  position: relative;
+  width: calc(#{$slide-width * 3});
+}
+
+.item-container {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.item-list {
+  height: 100%;
+  left: 50%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  transform: translateX(-50%);
+  width: calc(#{($slide-count + 0.5) * $slide-width * 2});
+}
+
+.item {
+  display: inline-block;
+  height: $slide-width;
+  margin: 0;
+  padding: 1rem;
+  position: absolute;
+  transition: all 1.5s;
+  width: $slide-width;
+}
+
+.item-img-data {
+  cursor: zoom-in;
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+
+  img {
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease;
+    width: 100%;
+  }
+
+  &:hover {
+    &::after {
+      opacity: 1;
+    }
+
+    img {
+      transform: scale(1.5);
+    }
+  }
+}
+.make-side-img-small {
+  width: 60%;
+  height: 60%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.item-data {
+  top: 100%;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+}
+
+.item-btn {
+  align-items: center;
+  background: 0;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  &-back {
+    left: -10rem;
+  }
+
+  &-next {
+    right: -10rem;
+  }
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 0.4rem 0.4rem 0;
+  height: 6rem;
+  padding: 3px;
+  width: 6rem;
+  z-index: 10;
+
+  &-left {
+    transform: rotate(135deg);
+  }
+
+  &-right {
+    transform: rotate(-45deg);
+  }
+}
+
+// .carousel__dots {
+//   display: inline-block;
+//   left: 50%;
+//   margin-top: 2rem;
+//   position: absolute;
+//   transform: translateX(-50%);
+
+//   .dot {
+//     background: #ccc;
+//     border: 0;
+//     border-radius: 50%;
+//     cursor: pointer;
+//     height: 2rem;
+//     margin: 0 0.3rem;
+//     outline: none;
+//     transform: scale(0.5);
+//     width: 2rem;
+
+//     &.active {
+//       background: black;
+//     }
+//   }
+// }
